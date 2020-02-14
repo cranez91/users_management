@@ -3,6 +3,7 @@ A simple CRUD for users
 
 # Installation
 * Clone the project
+
 Run the following commands:
 * composer install
 * cp .env.example .env
