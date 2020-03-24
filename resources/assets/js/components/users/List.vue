@@ -243,7 +243,6 @@
             var str = file.name;
             this.user.photo = str.replace(" ", "_");
             this.file_type = file.type;
-            console.log("file", file);
             reader.onload = (e) => {
                 vm.my_file = e.target.result;
             };
@@ -265,10 +264,8 @@
                 }
                 })
             .then(function (response) {
-                console.log(response);
             })
             .catch(function (response) {
-                console.log(response);
             });
         },
         importFile() {
@@ -298,7 +295,6 @@
             });
         },
         updateUser() {
-            console.log(this.file_type);
             if(!this.validateImageType()){
                 return;
             }

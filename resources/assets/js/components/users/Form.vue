@@ -44,14 +44,7 @@
 </template>
 
 <script>
-	//import swal from 'sweetalert2';
 	export default {
-		/*components: {
-	      swal,
-	    },*/
-	    mounted(){
-	    	//this.setInitialData();
-	    },
 	    data(){
 	        return {
 	        	user: {
@@ -62,29 +55,8 @@
 	        		photo: "",
 	        		admission_date: ""
 	        	}
-	        	/*statusOptions: [
-		          { value: 'Activo', 
-		            text: 'Activo' 
-		          },
-		          { value: 'Inactivo', 
-		            text: 'Inactivo' 
-		          },
-		        ],
-		        drawer: false,
-	            e1: 0,
-	            dialog: false,*/
 	        }
 	    },
-		/*props: { 
-		  user: { 
-		  },
-		  shops: { 
-		  },
-		  types: { 
-		  },
-		  method: "",
-		  route: "",
-		},*/
 		methods:{
 			send(){
 				
@@ -106,28 +78,16 @@
 				}).then((response)=>{
 					if( response.data.status == "error" ){
 						alert("error");
-						//this.makeSwal("Lo sentimos", response.data.msg, "error", "Aceptar");
 					} else if ( response.data.status == "ok" ){
-						/*swal({
-		                  title: "Listo!",
-		                  html: response.data.msg,
-		                  type: "success",
-		                  confirmButtonText: "Aceptar",
-		                  allowOutsideClick: false
-		                }).then(function(){
-		                  window.location.href= "/sadmin/users";
-		                });*/
 		                alert("Guardado");
 					}
 				}).catch ((error) => {
 					alert("Ocurrió un error inesperado");
-		            //this.makeSwal("Lo sentimos", "Ocurrió un error inesperado, intenta de nuevo.", "error", "Aceptar");
 		        });  
 			},
 			validate(){
 				if( !this.user.name || !this.user.last_name || !this.user.age || !this.user.phone || !this.user.photo || !this.user.admission_date ){
 					alert("todos los campos son obligatorios");
-					//this.makeSwal("¡Espera!", "No has elegido una nivel de usuario.", "warning", "Aceptar");
 					return false;
 				}
 				return true;
